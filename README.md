@@ -1,4 +1,4 @@
-# sugar-data
+# Sugar Data
 A simple POJO based database abstraction.  Sugar Data allows you to create annotated DAO interfaces and automatically serializes your Pojo's to JDBC datasources
 
 # Quick Start
@@ -28,7 +28,7 @@ public interface SomethingDao {
 }
 ```
 
-3.  Inject the dao into your service class with the @Dao annotation.
+3.  Inject the dao into your service class with the @Dao annotation, referencing the Datasource by unique id.
 ```
 class MyService{
 
