@@ -1,5 +1,5 @@
 # Sugar Data
-A simple POJO based database abstraction.  Sugar Data allows you to create annotated DAO interfaces and automatically serializes your Pojo's to JDBC datasources
+A simple POJO centric database abstraction layer.  Sugar Data allows you to create annotated DAO interfaces and automatically serializes your Pojo's to JDBC datasources
 
 # Quick Start
 
