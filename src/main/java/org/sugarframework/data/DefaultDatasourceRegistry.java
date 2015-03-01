@@ -44,11 +44,8 @@ public class DefaultDatasourceRegistry implements DatasourceRegistry {
     private Log log = LogFactory.getLog(getClass());
 
     private Map<String, DataSource> datasources = new HashMap<>();
-
-    @Override
-    public void initialize(Object page) {
-    	
-        for (Class<?> type : ClassIndex.getAnnotated(Datasource.class)) {
+    {
+    	for (Class<?> type : ClassIndex.getAnnotated(Datasource.class)) {
 
             Datasource ds = type.getAnnotation(Datasource.class);
 
@@ -60,10 +57,13 @@ public class DefaultDatasourceRegistry implements DatasourceRegistry {
 
             datasources.put(ds.id(), dataSource);
         }
-        
-        //Set<Field> fields = getAllFields(page.getClass(), withAnnotation(Dao.class));
-        
-        for (Field field : page.getClass().getDeclaredFields()) {
+    	
+    }
+
+    @Override
+    public void initialize(Object target) {
+    	        
+        for (Field field : target.getClass().getDeclaredFields()) {
         	
         	if(!field.isAnnotationPresent(Dao.class)){
         		continue;
@@ -125,7 +125,7 @@ public class DefaultDatasourceRegistry implements DatasourceRegistry {
             field.setAccessible(true);
 
             try {
-                field.set(page, newDao);
+                field.set(target, newDao);
             }
             catch (IllegalArgumentException | IllegalAccessException e) {
                 log.error(e.getMessage(), e);

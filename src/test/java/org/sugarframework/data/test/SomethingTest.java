@@ -55,6 +55,11 @@ public final class SomethingTest {
         	System.out.println(i);
         }
         
+        List<Something> found = dao.findByName("Maryse");
+        for(Something s : found){
+        	System.out.println(s);
+        }
+        
     }
 
     public static void main(String[] args) throws Exception {

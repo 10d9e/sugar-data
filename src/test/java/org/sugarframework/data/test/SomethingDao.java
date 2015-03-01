@@ -37,6 +37,9 @@ public interface SomethingDao {
     @Query("select * from something where id = {id} and name = {name}")
     Something find(@Bind("id") int id, @Bind("name") String name);
     
+    @Query("select * from Something where name = {name}")
+    List<Something> findByName( @Bind("name") String name);
+    
     @Query("select name from something where name = {n}")
     List<Map<String, String>> findNames(@Bind("n") String name);
     
