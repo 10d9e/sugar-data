@@ -3,9 +3,10 @@ A simple POJO based database abstraction.  Sugar Data allows you to create annot
 
 # Quick Start
 
-1. Supply a @Datasource annotation that contains the connection information and unique identifier of the JDBC datasource.  This can be placed on any class, but it is recommended to keep it on your entity or Dao classes.
+Supply a @Datasource annotation that contains the connection information and unique identifier of the JDBC datasource.  This can be placed on any class, but it is recommended to keep it on your entity or Dao classes.
 
-2. Define an interface that will represent your Data Access Object (DAO).  Note the name of the ```@Bind``` annotations in the parameters are referenced with braces in the annotated SQL ```@Update``` or ```@Query``` expression.
+Define an interface that will represent your Data Access Object (DAO).  Note the name of the ```@Bind``` annotations in the parameters are referenced with braces in the annotated SQL ```@Update``` or ```@Query``` expression.
+
 
 ```
 @Datasource(id="data1", url="jdbc:h2:mem:test", user="username", password="password")
@@ -27,8 +28,7 @@ public interface SomethingDao {
     List<Map<String, String>> findNames(@Bind("n") String name);
 }
 ```
-
-3.  Inject the dao into your service class with the @Dao annotation, referencing the Datasource by unique id.
+Inject the dao into your service class with the @Dao annotation, referencing the Datasource by unique id.
 ```
 class MyService{
 
