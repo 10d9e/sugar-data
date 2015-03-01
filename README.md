@@ -1,5 +1,5 @@
 # Sugar Data
-A light-weight POJO centric object relational mapping library.  Sugar Data allows you to create annotated DAO interfaces and automatically serializes your Pojo's to JDBC datasources.
+A light-weight POJO centric object relational mapping library.  Sugar Data allows you to create annotated DAO interfaces and automatically serialize your Pojo's to annotation-definied JDBC datasources.
 
 # Quick Start
 
