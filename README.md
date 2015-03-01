@@ -3,7 +3,7 @@ A light-weight POJO centric object relational mapping library.  Sugar Data allow
 
 # Quick Start
 
-Define a Pojo with the JavaBeans nameing and format convention.
+Define a Pojo with the JavaBeans naming and format convention.
 
 ```
 public class Something {
