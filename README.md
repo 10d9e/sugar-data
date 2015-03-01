@@ -68,3 +68,4 @@ class MyService{
     
     ...
 ```    
+That's it!  No more persistence.xml or orm mapping files.  Just simple annotation-driven JDBC datasource definition and object serialization.
