@@ -3,6 +3,26 @@ A light-weight POJO centric object relational mapping library.  Sugar Data allow
 
 # Quick Start
 
+Define a Pojo with the JavaBean convention
+
+```
+public class Something {
+    
+    private int id;
+    private String name;
+    private Date birthday = new Date();
+    
+    public Something(){
+    }
+    
+    public Something(int id, String name) {
+        super();
+        this.id = id;
+        this.name = name;
+    }
+    ...
+```    
+
 Supply a @Datasource annotation that contains the connection information and unique identifier of the JDBC datasource.  This can be placed on any class, but it is recommended to keep it on your entity or Dao classes.
 
 Define an interface that will represent your Data Access Object (DAO).  Note the name of the ```@Bind``` annotations in the parameters are referenced with braces in the annotated SQL ```@Update``` or ```@Query``` expression.
