@@ -22,7 +22,7 @@ public interface SomethingDao {
     @Update("delete from something where id={s.id}")
     void delete(@Bind("s") Something s);
 
-    // Go old-school with bound primitives
+    // Kick it old-school with bound primitives
     @Update("create table something(id int, name varchar(100), birthday date)")
     void create();
     
