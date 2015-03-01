@@ -12,6 +12,17 @@ Define an interface that will represent your Data Access Object (DAO).  Note the
 @Datasource(id="data1", url="jdbc:h2:mem:test", user="username", password="password")
 public interface SomethingDao {
 
+    // Use and reference the pojos directly
+    @Update("insert into something(id, name) values ({s.id}, {s.name})")
+    void add(@Bind("s") Something s);
+
+    @Update("update something set id={s.id}, name={s.name}, birthday={s.birthday} where id={s.id}")
+    void update(@Bind("s") Something s);
+
+    @Update("delete from something where id={s.id}")
+    void delete(@Bind("s") Something s);
+
+    // Go old-school with bound primitives
     @Update("create table something(id int, name varchar(100), birthday date)")
     void create();
     
